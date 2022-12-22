@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Svi kupci</title>
+  </head>
+  <body>
+    <a href="/">Vrati se na početnu</a>
+    <br />
+    <h2>Svi kupci</h2>
+    <br />
+    {% for k in kupci %}
+    <ul>
+      <h3>{{ k.kupac_ime }} {{ k.kupac_prezime }}</h3>
+      <li>Adresa kupca: {{ k.kupac_adresa }}</li>
+      <li>Email kupca: {{k.kupac_email}}</li>
+      <li>Preferirani način plaćanja: {{k.kupac_placanje }}</li>
+      <li>Kupljeni proizvodi:</li>
+      <ol>
+        {% for kupac in k.kupac_proizvodi.all %}
+        <li>{{kupac}}</li>
+        {% endfor %}
+      </ol>
+      <br />
+      <hr />
+      <br />
+    </ul>
+    {% endfor %}
+  </body>
+</html>

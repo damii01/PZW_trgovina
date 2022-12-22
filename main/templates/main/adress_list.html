@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sve kupci</title>
+  </head>
+  <body>
+    {% extends "homepage.html" %} {% block content %}
+    <h2>Adrese</h2>
+
+    <ul>
+      {% for a in object_list %}
+      <li>
+        Država: {{ a.adress_country }}<br />
+        Grad: {{ a.adress_city }}<br />
+        Ulica:{{ a.adress_name }}<br />
+        Broj: {{a.adress_number}}
+      </li>
+      <hr />
+      <br /><br />
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </body>
+</html>

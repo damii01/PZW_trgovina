@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Svi kupci</title>
+  </head>
+  <body>
+    <h2>Dobrodošli na web stranicu trgovine <strong> LD </strong></h2>
+    <div id="sidebar">
+      {% block sidebar %}
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/datum">Trenutno vrijeme</a></li>
+        <li><a href="/adrese">Adrese</a></li>
+        <li><a href="/vrstaProizvoda">Kategorije proizvoda</a></li>
+        <li><a href="/kupci">Lista kupaca</a></li>
+        <li><a href="/all_kupac">Lista kupaca (drugi način)</a></li>
+        <li><a href="/proizvodi">Dostupni proizvodi</a></li>
+      </ul>
+      {% endblock %}
+    </div>
+
+    <div class="content">{% block content %} {% endblock %}</div>
+  </body>
+</html>

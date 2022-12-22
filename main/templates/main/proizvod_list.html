@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LD</title>
+  </head>
+  <body>
+    {% extends "homepage.html" %} {% block content %}
+    <h2>Proizvodi</h2>
+    <br />
+    {% for p in object_list %}
+    <h3>Brand: {{ p.proizvod_brand }}</h3>
+    <h4>Naziv: {{ p.proizvod_naziv }} <br /></h4>
+    <li>Veličina: {{ p.proizvod_size }}<br /></li>
+    <li>Cijena: {{ p.proizvod_price }}<br /></li>
+    <li>Boja: {{ p.proizvod_color }} <br /></li>
+    <li>Popust: {{ p.proizvod_discount}}<br /></li>
+    <li>Kategorija: {{ p.proizvod_vrstaP }}</li>
+    <br />
+    <hr />
+    <br />
+    {% endfor %} {% endblock %}
+  </body>
+</html>

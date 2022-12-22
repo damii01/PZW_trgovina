@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LD</title>
+  </head>
+  <body>
+    {% extends "homepage.html" %} {% block content %}
+    <h2>Kupci</h2>
+    <ul>
+      {% for kupac in object_list %}
+    <h3>{{ kupac.kupac_ime }} {{ kupac.kupac_prezime }}</h3>
+    <li>Adresa kupca: {{ kupac.kupac_adresa }}</li>
+    <li>Email kupca: {{kupac.kupac_email}}</li>
+    <li>Preferirani način plaćanja: {{kupac.kupac_placanje }}</li>
+    <li>Kupljeni proizvodi: </li>
+    <ol>
+    {% for k in kupac.kupac_proizvodi.all %}
+     <li>{{k}}</li>
+    {% endfor %}
+    </ol>
+    <br />
+    <hr />
+    <br />
+    {% endfor %}
+    {% endblock %}
+  </body>
+</html>

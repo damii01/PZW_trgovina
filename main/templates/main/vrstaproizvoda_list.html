@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LD</title>
+  </head>
+  <body>
+    {% extends "homepage.html" %} {% block content %}
+    <h2>Vrsta Proizvoda</h2>
+    <ul>
+      {% for vp in object_list %}
+      <li>Vrsta Proizvoda: {{ vp.vrstaP_naziv }}<br /></li>
+      <hr />
+      <br /><br />
+      {% endfor %}
+    </ul>
+    {% endblock %}
+  </body>
+</html>
